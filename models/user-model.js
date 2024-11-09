@@ -17,4 +17,4 @@ const mongoose = require('mongoose');
     picture :String,
  });
 
- module.export =mongoose.model("user", userSchema);
+ module.exports =mongoose.model("user", userSchema);

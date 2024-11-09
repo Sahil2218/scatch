@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
-
-mongoose.connect("mongodb+srv://sahildayanand2218:Lx3bNCgS8tuvgL01@cluster0.twdod7s.mongodb.net/")
+const config = require('config');
+const dbgr = require('debug')("development:mongoose");
+mongoose
+.connect(`${config.get("MONGODB_URL")}/scatch`)
 .then((value) => {
-    console.log("conneted");
+    dbgr("conneted");
     
 })
 .catch((err) => {
-    console.log(err);
+    dbgr(err);
     
 })
 
